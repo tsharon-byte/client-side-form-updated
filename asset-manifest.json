@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/client-side-form-updated/static/css/main.f2fa04c8.chunk.css",
+    "main.js": "/client-side-form-updated/static/js/main.fb050ddd.chunk.js",
+    "main.js.map": "/client-side-form-updated/static/js/main.fb050ddd.chunk.js.map",
+    "runtime-main.js": "/client-side-form-updated/static/js/runtime-main.d0683d03.js",
+    "runtime-main.js.map": "/client-side-form-updated/static/js/runtime-main.d0683d03.js.map",
+    "static/css/2.5a510433.chunk.css": "/client-side-form-updated/static/css/2.5a510433.chunk.css",
+    "static/js/2.468e6f41.chunk.js": "/client-side-form-updated/static/js/2.468e6f41.chunk.js",
+    "static/js/2.468e6f41.chunk.js.map": "/client-side-form-updated/static/js/2.468e6f41.chunk.js.map",
+    "index.html": "/client-side-form-updated/index.html",
+    "precache-manifest.310ce42ba28566c9eed780e91d35e1f0.js": "/client-side-form-updated/precache-manifest.310ce42ba28566c9eed780e91d35e1f0.js",
+    "service-worker.js": "/client-side-form-updated/service-worker.js",
+    "static/css/2.5a510433.chunk.css.map": "/client-side-form-updated/static/css/2.5a510433.chunk.css.map",
+    "static/css/main.f2fa04c8.chunk.css.map": "/client-side-form-updated/static/css/main.f2fa04c8.chunk.css.map",
+    "static/js/2.468e6f41.chunk.js.LICENSE.txt": "/client-side-form-updated/static/js/2.468e6f41.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0683d03.js",
+    "static/css/2.5a510433.chunk.css",
+    "static/js/2.468e6f41.chunk.js",
+    "static/css/main.f2fa04c8.chunk.css",
+    "static/js/main.fb050ddd.chunk.js"
+  ]
+}
