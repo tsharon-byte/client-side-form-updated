@@ -1,0 +1,20 @@
+.form-group {
+    margin: 0 auto 0.15rem auto;
+    padding: 0.15rem;
+}
+
+#survey-form {
+    text-align: left;
+    margin: 20px auto 0 auto;
+    padding: 1.5rem 1.625rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    width: 50vw;
+    background-color: #37474f;
+}
+
+.form-control {
+    width: 100%;
+}
+.pd1{
+    padding:10px;
+}

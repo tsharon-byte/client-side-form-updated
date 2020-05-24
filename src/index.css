@@ -1,0 +1,11 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+body {
+    background-color: #757575;
+    color: rgb(100, 216, 300);
+    text-align: center;
+}
+.btn{
+    background-color: rgb(100, 216, 300);
+    width:100%;
+}
