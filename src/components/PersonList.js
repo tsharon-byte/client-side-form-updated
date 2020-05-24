@@ -37,8 +37,8 @@ const PersonList = () => {
     }, [deleted]);
 
     async function rest() {
-        let url = `http://localhost:8080/employeeList`;
-        // let url = "https://server-side-form.herokuapp.com/employeeList";
+        // let url = `http://localhost:8080/employeeList`;
+        let url = "https://server-side-form.herokuapp.com/employeeList";
         try {
             let promise = await fetch(url, {
                 method: 'GET',

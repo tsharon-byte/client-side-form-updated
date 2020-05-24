@@ -20,8 +20,8 @@ const recommendData = [
 ];
 
 async function rest(person) {
-    let url = `http://localhost:8080/employee`;
-    // let url ="https://server-side-form.herokuapp.com/employee";
+    // let url = `http://localhost:8080/employee`;
+    let url ="https://server-side-form.herokuapp.com/employee";
     try {
         let promise = await fetch(url, {
             method: 'POST',
