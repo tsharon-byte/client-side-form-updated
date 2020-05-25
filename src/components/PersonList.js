@@ -1,5 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useReducer} from 'react';
 import './PersonForm.css';
+
+function reducer(state, action) {
+    switch (action.type) {
+        case 'delete':
+            return [...state].splice(action.value,1);
+        default:
+            return state;
+    }
+}
 
 async function restDelete(person) {
     // let url = `http://localhost:8080/employee`;
@@ -34,7 +43,11 @@ const PersonList = () => {
     const [deleted, setDeleted] = useState(false);
     useEffect(() => {
         rest();
-    }, [deleted]);
+    }, []);
+    const [state, dispatch] = useReducer(reducer, listOfPersons);
+    // useEffect(() => {
+    //     rest();
+    // }, [deleted]);
 
     async function rest() {
         // let url = `http://localhost:8080/employeeList`;
@@ -61,7 +74,8 @@ const PersonList = () => {
     function handleDelete(event) {
         setDeleted(!deleted);
         restDelete(listOfPersons[event.target.value]);
-        rest();
+        dispatch({type: 'delete', value:event.target.value})
+        setListOfPersons(state)
     }
 
     return (
