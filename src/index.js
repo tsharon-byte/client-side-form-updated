@@ -1,15 +1,11 @@
 import React from 'react';
+import 'materialize-css';
+
+import './index.css'
 import ReactDOM from 'react-dom';
 import Home from "./components/Home";
-import './index.css'
-import 'materialize-css'
-import {
-    BrowserRouter as Router
-} from "react-router-dom";
 
 ReactDOM.render(
-    <Router>
-        <Home/>
-    </Router>,
+    <Home/>,
     document.getElementById('root'));
 

@@ -1,82 +1,8 @@
-import React, {useEffect, useState, useReducer} from 'react';
+import React from 'react';
+
 import './PersonForm.css';
 
-function reducer(state, action) {
-    switch (action.type) {
-        case 'delete':
-            return [...state].splice(action.value,1);
-        default:
-            return state;
-    }
-}
-
-async function restDelete(person) {
-    // let url = `http://localhost:8080/employee`;
-    let url = "https://server-side-form.herokuapp.com/employee";
-    try {
-        let promise = await fetch(url, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(person)
-        });
-        if (promise.ok) { // если HTTP-статус в диапазоне 200-299
-            // получаем тело ответа (см. про этот метод ниже)
-            alert("Удалено из БД");
-        } else {
-            switch (promise.status) {
-                case 404:
-                    alert(`Нет такого пользователя в БД: ${person.firstName} ${person.lastName}`);
-                    break;
-                default:
-                    alert("Ошибка HTTP: " + promise.status);
-            }
-        }
-    } catch (error) {
-        alert("Нет доступа к серверу");
-    }
-}
-
-const PersonList = () => {
-    const [listOfPersons, setListOfPersons] = useState([]);
-    const [deleted, setDeleted] = useState(false);
-    useEffect(() => {
-        rest();
-    }, []);
-    const [state, dispatch] = useReducer(reducer, listOfPersons);
-    // useEffect(() => {
-    //     rest();
-    // }, [deleted]);
-
-    async function rest() {
-        // let url = `http://localhost:8080/employeeList`;
-        let url = "https://server-side-form.herokuapp.com/employeeList";
-        try {
-            let promise = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                }
-            });
-            if (promise.ok) { // если HTTP-статус в диапазоне 200-299
-                // получаем тело ответа (см. про этот метод ниже)
-                let json = await promise.json();
-                setListOfPersons(json);
-            } else {
-                alert("Ошибка HTTP: " + promise.status);
-            }
-        } catch (error) {
-            alert("Нет доступа к серверу");
-        }
-    }
-
-    function handleDelete(event) {
-        setDeleted(!deleted);
-        restDelete(listOfPersons[event.target.value]);
-        dispatch({type: 'delete', value:event.target.value})
-        setListOfPersons(state)
-    }
+const PersonList = ({employeeList, handleDelete}) => {
 
     return (
         <div>
@@ -97,8 +23,8 @@ const PersonList = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {listOfPersons.map((person, id) =>
-                        (<tr key={id}>
+                    {employeeList.map(person =>
+                        (<tr key={person.id}>
                             <td>{person.firstName}</td>
                             <td>{person.lastName}</td>
                             <td>{person.email}</td>
@@ -108,7 +34,7 @@ const PersonList = () => {
                             <td>{person.language}</td>
                             <td>{person.comments}</td>
                             <td>
-                                <button className="btn" value={id} onClick={handleDelete}>delete</button>
+                                <button className="btn" value={person.id} onClick={handleDelete}>delete</button>
                             </td>
                         </tr>)
                     )}
