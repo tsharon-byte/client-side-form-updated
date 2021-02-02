@@ -15,9 +15,9 @@ function Home() {
         <Router>
             <Nav/>
             <Switch>
-                <Route exact path='/' component={About}/>
                 <Route path="/form" component={PersonForm}/>
                 <Route path="/list" component={EmployeeListProvider}/>
+                <Route path='/' component={About}/>
             </Switch>
         </Router>
     );
